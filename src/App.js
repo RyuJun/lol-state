@@ -1,27 +1,42 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ViewSearchID from './components/ViewSearchID'
-import './App.css';
+import ViewListWrapper from './components/ViewListWrapper'
+import './css/App.css';
 
 const apiDefault = {
   url : "https://kr.api.riotgames.com/lol",
   key : "RGAPI-7f41163f-0f97-4f24-bf29-a60c9d773b2a",
-  name : "류똥글"
+  name : "식이섬유풍부"
 }
 
 class App extends Component {
   state = {
     input: "",
-    summoner : {}
+    summoner : {},
+    match : {},
+    league : {}
   };
 
   getLOLData = () => {
-    let summonerUrl = `${apiDefault.url}/summoner/v3/summoners/by-name/${apiDefault.name}?api_key=${apiDefault.key}`;
+    let summonerUrl, matchUrl, leagueUrl;
+
+    summonerUrl = `${apiDefault.url}/summoner/v3/summoners/by-name/${apiDefault.name}?api_key=${apiDefault.key}`;
     axios.get(summonerUrl)
     .then( summonerData => {
-      this.setState({
-        summoner : summonerData.data
-      })
+      matchUrl = `${apiDefault.url}/match/v3/matchlists/by-account/${summonerData.data.accountId}?api_key=${apiDefault.key}`;    
+      axios.get(matchUrl)
+      .then( matchData => {
+        leagueUrl = `${apiDefault.url}/league/v3/positions/by-summoner/${summonerData.data.id}?api_key=${apiDefault.key}`;
+        axios.get(leagueUrl)
+        .then( leagueData => {
+          this.setState({
+            summoner: summonerData.data,
+            match : matchData.data,
+            league : leagueData.data[0]
+          })
+        }).catch( error => console.log("Data가 없습니다."));    
+      }).catch( error => console.log("Data가 없습니다."));
     }).catch( error => console.log("Data가 없습니다."));
   }
 
@@ -30,14 +45,24 @@ class App extends Component {
       input: e.target.value,
     });
   }
-
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.getLOLData();
+    }
+  }
   render() {
+    const { summoner, league, match } = this.state
+    const { handleChange, handleKeyPress, getLOLData } = this
+    const ListWrapper = summoner.id === undefined ? null : <ViewListWrapper summoner={summoner} league={league} match={match}/>;
+
     return (
       <div className="App">
         <ViewSearchID 
-          onChange={this.handleChange}
-          getLOLData={this.getLOLData}  
+          handleChange={handleChange}
+          handleKeyPress={handleKeyPress}
+          getLOLData={getLOLData}
         />
+        {ListWrapper}
       </div>
     );
   }

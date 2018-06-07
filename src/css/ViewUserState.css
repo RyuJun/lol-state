@@ -1,0 +1,55 @@
+.topProfileStateWrapper {
+    width:100%;
+    padding:1em;
+}
+.tierImg {
+    width:130px;
+    height:130px;
+    margin:0 auto;
+    margin-top:-20px;
+    float:none;
+}
+.tierImg > img {
+    width:100%;
+    height:100%;
+    
+}
+.tierTextArea {
+    padding-top:20px;
+    padding-left:20px;
+}
+.tierTextArea2 {
+    padding-left:20px;
+}
+.leftImgSection {
+    width:100%;
+    height:auto;
+    max-width:130px;
+    max-height:130px;
+    padding:12px;
+    float:left;
+}
+.leftImgSection > img {
+    width:100%;
+    height:auto;
+}
+.leftImgSection > span {
+    position:absolute;
+    left: calc(50% - 22px);
+    bottom: 5px;
+    width:44px;
+    height:24px;
+    background:url(http://opgg-static.akamaized.net/images/site/summoner/bg-levelbox.png) no-repeat;
+    background-size:auto 100%;
+    color:#eabd56;
+    text-align: center;
+}
+.rightLeagueContent {
+    float:left;
+}
+.col-md-4 {
+    background:red;
+}
+.circularProgressbarStyle svg {
+    max-width:100px;
+}
