@@ -53,3 +53,31 @@
 .circularProgressbarStyle svg {
     max-width:100px;
 }
+.preferWrap {
+    margin:0 auto;
+    float:none;
+    width:180px;
+    height:90px;
+}
+.preferChamp {
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    background:red;
+    overflow:visible;
+}
+.preferLine {
+    overflow:visible;
+    float:right;
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    background:red;
+}
+.preferChamp > span , 
+.preferLine > span {
+    position:absolute;
+    bottom:-20px;
+    width:70px;
+    left: calc(50% - 35px);
+}

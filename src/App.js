@@ -6,8 +6,8 @@ import './css/App.css';
 
 const apiDefault = {
   url : "https://kr.api.riotgames.com/lol",
-  key : "RGAPI-7f41163f-0f97-4f24-bf29-a60c9d773b2a",
-  name : "식이섬유풍부"
+  key : "RGAPI-4b3d4787-b483-40be-a4c7-52e2fe280f80",
+  name : "hide on bush"
 }
 
 class App extends Component {
@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     const { summoner, league, match } = this.state
     const { handleChange, handleKeyPress, getLOLData } = this
-    const ListWrapper = summoner.id === undefined ? null : <ViewListWrapper summoner={summoner} league={league} match={match}/>;
+    const ListWrapper = summoner.id === undefined ? null : <ViewListWrapper summoner={summoner} league={league} match={match} />;
 
     return (
       <div className="App">
