@@ -7,7 +7,7 @@ import './css/App.css';
 const apiDefault = {
   url : "https://kr.api.riotgames.com/lol",
   key : "RGAPI-4b3d4787-b483-40be-a4c7-52e2fe280f80",
-  name : "hide on bush"
+  name : "학식먹을나이"
 }
 
 class App extends Component {
