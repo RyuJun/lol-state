@@ -6,7 +6,7 @@
     width:130px;
     height:130px;
     margin:0 auto;
-    margin-top:-20px;
+    margin-top:10px;
     float:none;
 }
 .tierImg > img {
@@ -49,32 +49,32 @@
 }
 .circularProgressbarStyle svg {
     max-width:100px;
+    margin-top: 35px;
 }
 .preferWrap {
     margin:0 auto;
     float:none;
     width:180px;
-    height:90px;
+    height:110px;
 }
 .preferChamp {
     width:70px;
     height:70px;
     border-radius: 50%;
-    background:red;
     overflow:visible;
 }
 .preferLine {
     overflow:visible;
     float:right;
     width:70px;
-    height:70px;
-    border-radius: 50%;
-    background:red;
+    height:49px;
+    margin-top:10px;
 }
 .preferChamp > span , 
 .preferLine > span {
     position:absolute;
-    bottom:-20px;
-    width:70px;
-    left: calc(50% - 35px);
+    bottom:-25px;
+    width:80px;
+    left: calc(50% - 40px);
 }
+.preferLine > span { bottom:-35px }
