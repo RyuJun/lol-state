@@ -107,13 +107,43 @@ class App extends Component {
         }
         return champ.push(item.champion);
     })
+
+    
+    
+    let datas = data.map((item) => item.champion);
+    let championCnt = {
+      5:2,
+      3:4
+    };
+    const champCntAdd = (champId, i) => {
+      if (championCnt[champId]) {
+        championCnt[champId] = championCnt[champId] + 1;
+      } else {
+        championCnt[champId] = 1;
+      }
+    }
+    
+    //datas.forEach(champCntAdd);
+
+    // datas.map((champId, i) => {
+    //   console.log(champId);
+    //   // if(championCnt[i][champId]) return {champId};
+    // });
+    console.log(championCnt);
+    // console.log(championCnt[0]["key"])
+    // if(championCnt["key"] === 5){
+    //   console.log("aa");
+    // }
+
     playChamp = champ.filter((item, pos) => champ.indexOf(item) === pos)
     playChamp.map((item) => playChampCnt.push(champ.filter((items) => item === items)))
+    
 
     preferData.champ =  playChampCnt;
     preferData.preferChamp = preferData.champ.reduce((prev, current) => (prev.length > current.length) ? prev : current)
     preferData.preferLane = preferData.lane.reduce((prev, current) => (prev.playCount > current.playCount) ? prev : current)
-    
+
+    //console.log(preferData)
     return preferData;
 }
   handleChange = (e) => {
