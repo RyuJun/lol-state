@@ -21,29 +21,7 @@
 .tierTextArea2 {
     padding-left:20px;
 }
-.leftImgSection {
-    width:100%;
-    height:auto;
-    max-width:130px;
-    max-height:130px;
-    padding:12px;
-    float:left;
-}
-.leftImgSection > img {
-    width:100%;
-    height:auto;
-}
-.leftImgSection > span {
-    position:absolute;
-    left: calc(50% - 22px);
-    bottom: 5px;
-    width:44px;
-    height:24px;
-    background:url(http://opgg-static.akamaized.net/images/site/summoner/bg-levelbox.png) no-repeat;
-    background-size:auto 100%;
-    color:#eabd56;
-    text-align: center;
-}
+
 .rightLeagueContent {
     float:left;
 }

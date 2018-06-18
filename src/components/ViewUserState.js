@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CircularProgressbar from 'react-circular-progressbar';
 import champData from '../static-data/champ-static-data';
+import ViewUserStateProfile from './ViewUserStateProfile';
 import '../css/ViewUserState.css';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -33,22 +34,15 @@ class ViewUserState extends Component {
             <div className="topProfileStateWrapper col-md-12">
                 <div className="col-sm-12 nopadding">
                     <div className="card col-sm-12 text-left">
-                        <div className="card-block col-md-12 padding1em">
-                            <div className="col-xs-4">
-                                <div className="leftImgSection" style={imgStyle}>
-                                    <img src={`//opgg-static.akamaized.net/images/profile_icons/profileIcon${summoner.profileIconId}.jpg`} alt="ProfileImg"/><br/>
-                                    <span className="profileLevel">{summoner.summonerLevel}</span>
-                                </div>
-                            </div>    
-                            <div className="col-xs-8 tierTextArea">
-                                <h4 className="card-title">{league.playerOrTeamName}</h4>
-                                <p className="card-text">{league.leagueName}</p>
-                                <p className="card-text">{vsComment}</p>
-                            </div>
-                        </div>
+                        <ViewUserStateProfile 
+                            summoner = {summoner}
+                            league = {league}
+                            match = {match}
+                            preferData = {preferData}
+                        />
                         <hr/>
                         <div className="col-md-12 padding1em">
-                            <div className="col-md-4 text-center">
+                            {/* <div className="col-md-4 text-center">
                                 <div className="tierImg">
                                     <img src={`//opgg-static.akamaized.net/images/medals/${league.tier.toLowerCase()}_${myRank}.png`} alt="ProfileImg"/><br/>
                                 </div>
@@ -67,7 +61,7 @@ class ViewUserState extends Component {
                             </div>   
                             <div className="col-md-4 circularProgressbarStyle text-center">
                                 <CircularProgressbar percentage={myVS} />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
