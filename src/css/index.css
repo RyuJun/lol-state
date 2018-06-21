@@ -28,3 +28,6 @@ div {
   border: 1px solid #1864ab;
   cursor:pointer;
 }
+.overVisible{
+  overflow:visible;
+}

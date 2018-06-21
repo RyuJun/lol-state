@@ -44,3 +44,40 @@
 .card-title {
     margin-top:7px;
 }
+
+.tierImg {
+    width:130px;
+    height:130px;
+    margin:0 auto;
+    margin-top:10px;
+    float:none;
+}
+.tierImg > img {
+    width:100%;
+    height:100%;
+    
+}
+.tierTextArea {
+    padding-top:13px;
+    padding-left:20px;
+    overflow: visible;
+}
+.tierTextArea2 {
+    padding-left:20px;
+}
+
+.rightLeagueContent {
+    float:left;
+}
+.circularProgressbarStyle svg {
+    max-width:100px;
+    margin-top: 35px;
+}
+.commentText {
+    position:absolute;
+    color:#1c7ed6;
+    top:95px;
+    line-height: 20px;
+    word-break: keep-all;
+    font-weight: 400;
+}

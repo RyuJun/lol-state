@@ -2,36 +2,11 @@
     width:100%;
     padding:1em;
 }
-.tierImg {
-    width:130px;
-    height:130px;
-    margin:0 auto;
-    margin-top:10px;
-    float:none;
-}
-.tierImg > img {
-    width:100%;
-    height:100%;
-    
-}
-.tierTextArea {
-    padding-top:20px;
-    padding-left:20px;
-}
-.tierTextArea2 {
-    padding-left:20px;
-}
 
-.rightLeagueContent {
-    float:left;
-}
-.circularProgressbarStyle svg {
-    max-width:100px;
-    margin-top: 35px;
-}
 .preferWrap {
     margin:0 auto;
     float:none;
+    overflow: visible;
     width:180px;
     height:110px;
 }
@@ -52,7 +27,7 @@
 .preferLine > span {
     position:absolute;
     bottom:-25px;
-    width:80px;
-    left: calc(50% - 40px);
+    width: 120px;
+    left: calc(50% - 60px);
 }
 .preferLine > span { bottom:-35px }

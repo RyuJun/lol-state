@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ViewUserState from './ViewUserState'
+import ViewUserState from './ViewUserState/ViewUserState';
+import ViewListTemplate from './ViewGmaeList/ViewListTemplate';
 import '../css/ViewListWrapper.css';
 
 class ViewListWrapper extends Component {
@@ -8,6 +9,7 @@ class ViewListWrapper extends Component {
       return (
         <div className="viewListWrapper col-md-12">
           <ViewUserState summoner={summoner} league={league} match={match} getPreferData={getPreferData}/>
+          <ViewListTemplate summoner={summoner} league={league} match={match} getPreferData={getPreferData}/>
         </div>
       );
     }
