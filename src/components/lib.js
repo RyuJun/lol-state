@@ -1,3 +1,5 @@
+import champData from '../static-data/champ-static-data';
+
 const defaultMMR = [
     { "mmr" : 1000, "tier" : "bronze", "rank": 5 },
     { "mmr" : 1050, "tier" : "bronze", "rank": 4 },
@@ -27,6 +29,69 @@ const defaultMMR = [
     { "mmr" : 2250, "tier" : "master", "rank": 1 },
     { "mmr" : 2700, "tier" : "challenger", "rank": 1 },
 ]
+const lineIconData = [
+        {
+          lane : "SUPPORT", 
+          playCount: 0, 
+          miniStyle : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-104px -2768px",
+          },
+          style : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-70px -2794px",
+          }
+        },
+        {
+          lane : "TOP", 
+          playCount: 0,
+          miniStyle : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-108px -2845px",
+          },
+          style : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-80px -2872px",
+          }
+        },
+        {
+          lane : "MID", 
+          playCount: 0,
+          miniStyle : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-108px -2692px",
+          },
+          style : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-80px -2719px",
+          }
+        },
+        {
+          lane : "JUNGLE", 
+          playCount: 0,
+          miniStyle : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-110px -2615px",
+          },
+          style : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-83px -2640px",
+          }
+        },
+        {
+          lane : "BOTTOM", 
+          playCount: 0,
+          miniStyle : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-108px -2537px",
+          },
+          style : {
+            backgroundImage: `url('http://opgg-static.akamaized.net/assets/site.png')`,
+            backgroundPosition: "-80px -2564px",
+          }
+        },
+        { lane : "NONE", playCount: 0 },
+]
 class GetUserMMR {
     getWinningRateMMR = (winningRate) => (winningRate - 50) * 20;
     getTierMMR = (league, rank) => defaultMMR.filter((item) => item.tier === league.tier.toLowerCase()).filter((item) => item.rank === rank);
@@ -48,4 +113,29 @@ class GetUserMMR {
     }
 }
 
-export { GetUserMMR };
+class GetGameData {
+    getChampData = (champion) => {
+        for (let i in champData.data) {
+            if(champData.data[i].id === champion) return champData.data[i]
+        }
+    }
+    getGameTime = (timestamp) => {
+        const date = new Date(timestamp),
+              year = date.getFullYear(),
+              month = date.getMonth()+1,
+              day = date.getDate(),
+              hour = date.getHours(),
+              min = date.getMinutes(),
+              sec = date.getSeconds(),
+              retVal =   year + "-" + (month < 10 ? "0" + month : month) + "-" 
+                        + (day < 10 ? "0" + day : day) + " " 
+                        + (hour < 10 ? "0" + hour : hour) + ":"
+                        + (min < 10 ? "0" + min : min) + ":" 
+                        + (sec < 10 ? "0" + sec : sec);
+        return retVal
+    }
+    getLaneIconData = (lane) => {
+        return lineIconData.filter((item) => item.lane === lane);
+    }
+}
+export { GetUserMMR, GetGameData };

@@ -9,7 +9,7 @@ class ViewListWrapper extends Component {
       return (
         <div className="viewListWrapper col-md-12">
           <ViewUserState summoner={summoner} league={league} match={match} getPreferData={getPreferData}/>
-          <ViewListTemplate summoner={summoner} league={league} match={match} getPreferData={getPreferData}/>
+          <ViewListTemplate summoner={summoner} league={league} match={match} />
         </div>
       );
     }

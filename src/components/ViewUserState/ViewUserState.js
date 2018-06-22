@@ -38,12 +38,12 @@ class ViewUserState extends Component {
                         />
                         <hr/>
                         <div className="col-md-12 padding1em">
-                            <div className="col-md-4 text-center">
+                            <div className="col-md-4 col-sm-6 text-center">
                                 <div className="tierImg">
                                     <img src={`//opgg-static.akamaized.net/images/medals/${league.tier.toLowerCase()}_${myRank}.png`} alt="ProfileImg"/><br/>
                                 </div>
                             </div>   
-                            <div className="col-md-4 text-center">
+                            <div className="col-md-4 col-sm-6 text-center">
                                 <h6>{league.tier} {league.rank}</h6>
                                 <p><b>{league.leaguePoints} P</b> / {league.wins}승 {league.losses}패 {myVS}%</p>
                                 <div className="preferWrap">

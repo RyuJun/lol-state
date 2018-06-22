@@ -11,21 +11,19 @@ class ViewUserStateProfile extends Component {
         const mmrComment = userMMR.getCommntData(mmrData, league, myRank);
         return (
             <div className="card-block padding1em">
-            <div className="col-sm-8 overVisible">
-                <div className="col-xs-4">
+                <div className="col-md-4 col-sm-6">
                     <div className="leftImgSection">
                         <img src={`//opgg-static.akamaized.net/images/profile_icons/profileIcon${summoner.profileIconId}.jpg`} alt="ProfileImg"/>
                         <img src={`//opgg-static.akamaized.net/images/borders2/${league.tier.toLowerCase()}.png`} alt="ProfileImgBorder"/>
                         <span className="profileLevel" alt="UserLevel">{summoner.summonerLevel}</span>
                     </div>
                 </div>    
-                <div className="col-xs-4 tierTextArea">
+                <div className="col-md-4 col-sm-6 tierTextArea">
                     <h4 className="card-title">{league.playerOrTeamName}</h4>
                     <p className="card-text">{league.leagueName}</p>
                     <p className="card-text commentText">{mmrComment}</p>
                 </div>
-            </div>
-                <div className="col-sm-4 text-center padding1em">
+                <div className="col-md-4 text-center padding1em">
                     <p className="animateNumberAreaTitle">Rank MMR</p>
                     <div className="animateNumberArea text-center">
                         <AnimatedNumber 

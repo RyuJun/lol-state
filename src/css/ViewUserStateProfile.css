@@ -1,11 +1,9 @@
 .leftImgSection {
-    width:100%;
-    height:auto;
     width:130px;
     height:130px;
     padding:12px;
-    float:left;
-    margin-top:14px;
+    margin-top:18px;
+    left:calc(50% - 65px);
 }
 .leftImgSection > img {
     position:absolute;
@@ -61,6 +59,7 @@
     padding-top:13px;
     padding-left:20px;
     overflow: visible;
+    text-align:center;
 }
 .tierTextArea2 {
     padding-left:20px;
@@ -74,9 +73,7 @@
     margin-top: 35px;
 }
 .commentText {
-    position:absolute;
     color:#1c7ed6;
-    top:95px;
     line-height: 20px;
     word-break: keep-all;
     font-weight: 400;
