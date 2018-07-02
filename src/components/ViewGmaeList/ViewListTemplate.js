@@ -4,11 +4,13 @@ import ViewListItem from './ViewListItem';
 class ViewListTemplate extends Component {
     
     render() {
-      const { summoner, league, match } = this.props;
-      const ViewListItems = match.matches.map((item, i) => <ViewListItem match={item} key={i}/> );
+      const { summoner, match } = this.props;
+      const ViewListItems = match.matches.map((item, i) => <ViewListItem summoner={summoner} match={item} key={i}/> );
       return (
           <div className="tableWrapper col-md-12">
-              {ViewListItems}
+                
+                {ViewListItems}
+              
           </div>
       );
     }

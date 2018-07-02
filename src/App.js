@@ -16,8 +16,11 @@ class App extends Component {
 
   getLOLData = () => {
     let summonerUrl, matchUrl, leagueUrl;
-
-    summonerUrl = `${ApiDefault.url}/summoner/v3/summoners/by-name/${ApiDefault.name}?api_key=${ApiDefault.key}`;
+    if(this.state.input.length <= 0) {
+      alert("ID를 입력해주세요")
+      return;
+    }
+    summonerUrl = `${ApiDefault.url}/summoner/v3/summoners/by-name/${this.state.input}?api_key=${ApiDefault.key}`;
     axios.get(summonerUrl)
     .then( summonerData => {
       matchUrl = `${ApiDefault.url}/match/v3/matchlists/by-account/${summonerData.data.accountId}?api_key=${ApiDefault.key}`;    
@@ -129,7 +132,7 @@ class App extends Component {
     const { summoner, league, match } = this.state
     const { handleChange, handleKeyPress, getLOLData, getPreferData } = this
     const ListWrapper = summoner.id === undefined ? null : <ViewListWrapper summoner={summoner} league={league} match={match} getPreferData={getPreferData}/>;
-
+    
     return (
       <div className="App">
         <ViewSearchID 

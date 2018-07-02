@@ -6,7 +6,7 @@ import '../../css/ViewUserStateProfile.css';
 class ViewUserStateProfile extends Component {
     render() {
         const { summoner, league, myRank, myVS  } = this.props;
-        const userMMR = new GetUserMMR();
+        const userMMR = GetUserMMR;
         const mmrData = userMMR.getTierMMR(league, myRank)[0].mmr + userMMR.getWinningRateMMR(myVS);
         const mmrComment = userMMR.getCommntData(mmrData, league, myRank);
         return (
