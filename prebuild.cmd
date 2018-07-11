@@ -1,7 +1,6 @@
 @echo off
-git add .
 
-git commit -m "omg"
+rmdir /s /q ..\junho-lol\public\
 
-git push heroku master
+node_modules\.bin\react-scripts.cmd build
 
