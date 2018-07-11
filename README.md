@@ -13,3 +13,4 @@ league-of-legends의 상태정보 및 게임 전적을 조회할수 있는 App�
 - create-react-app
 
 작업 기록  http://ryulog.tistory.com/
+결과물     https://junho-lol.herokuapp.com/
