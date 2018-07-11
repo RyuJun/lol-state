@@ -110,9 +110,9 @@ class App extends Component {
         }
         return champ.push(item.champion);
     })
-    playChamp = champ.filter((item, pos) => champ.indexOf(item) === pos)
+    playChamp = champ.filter((item, pos) => champ.indexOf(item) === pos) 
     playChamp.map((item) => playChampCnt.push(champ.filter((items) => item === items)))
-    
+
     preferData.champ =  playChampCnt;
     preferData.preferChamp = preferData.champ.reduce((prev, current) => (prev.length > current.length) ? prev : current)
     preferData.preferLane = preferData.lane.reduce((prev, current) => (prev.playCount > current.playCount) ? prev : current)

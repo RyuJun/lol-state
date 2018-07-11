@@ -8,11 +8,13 @@
     "react-animated-number": "^0.4.4",
     "react-circular-progressbar": "^0.8.0",
     "react-dom": "^16.4.0",
+    "react-script": "^2.0.5",
     "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "prebuild.cmd",
+    "publish": "prebuild2.cmd",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
