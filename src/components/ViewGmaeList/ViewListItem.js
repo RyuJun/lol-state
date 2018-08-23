@@ -17,6 +17,7 @@ class ViewListItem extends Component {
                 toggle : !this.state.toggle,
                 matchDetail : Detaildata.data
             })
+            console.log(Detaildata);
         }).catch( error => console.log("Data가 없습니다."));
     }
     render(){

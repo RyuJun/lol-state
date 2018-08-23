@@ -22,21 +22,21 @@ class App extends Component {
     }
     summonerUrl = `${ApiDefault.url}/summoner/v3/summoners/by-name/${this.state.input}?api_key=${ApiDefault.key}`;
     axios.get(summonerUrl)
-    .then( summonerData => {
-      matchUrl = `${ApiDefault.url}/match/v3/matchlists/by-account/${summonerData.data.accountId}?api_key=${ApiDefault.key}`;    
-      axios.get(matchUrl)
-      .then( matchData => {
-        leagueUrl = `${ApiDefault.url}/league/v3/positions/by-summoner/${summonerData.data.id}?api_key=${ApiDefault.key}`;
-        axios.get(leagueUrl)
-        .then( leagueData => {
-          this.setState({
-            summoner: summonerData.data,
-            match : matchData.data,
-            league : leagueData.data[0]
-          })
-        }).catch( error => console.log("Data가 없습니다."));    
-      }).catch( error => console.log("Data가 없습니다."));
-    }).catch( error => console.log("Data가 없습니다."));
+         .then( summonerData => {
+            matchUrl = `${ApiDefault.url}/match/v3/matchlists/by-account/${summonerData.data.accountId}?api_key=${ApiDefault.key}`;    
+            axios.get(matchUrl)
+                 .then( matchData => {
+                    leagueUrl = `${ApiDefault.url}/league/v3/positions/by-summoner/${summonerData.data.id}?api_key=${ApiDefault.key}`;
+                    axios.get(leagueUrl)
+                         .then( leagueData => {
+                            this.setState({
+                              summoner: summonerData.data,
+                              match : matchData.data,
+                              league : leagueData.data[0]
+                            })
+                          }).catch( error => console.log("Data가 없습니다."));    
+                  }).catch( error => console.log("Data가 없습니다."));
+        }).catch( error => console.log("Data가 없습니다."));
   }
   getPreferData = (data) => {
     let champ = [], 
